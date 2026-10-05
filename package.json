@@ -1,0 +1,1 @@
+{"name":"renjian-xuzhang","private":true,"type":"module","scripts":{"test":"node tests/simulation.mjs"}}
