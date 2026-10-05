@@ -1,1 +1,1 @@
-{"name":"renjian-xuzhang","private":true,"type":"module","scripts":{"test":"node tests/simulation.mjs"}}
+{"name":"renjian-xuzhang","private":true,"type":"module","scripts":{"test":"node tests/opening.mjs && node tests/menu.mjs && node tests/interface.mjs && node tests/simulation.mjs"}}
