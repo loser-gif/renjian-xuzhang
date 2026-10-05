@@ -8,6 +8,9 @@ globalThis.window={scrollTo(){},addEventListener(){}};
 await import('../app.js');
 const click=(act,id,kind)=>events.get('click')({target:{closest:()=>({dataset:{act,id,kind},disabled:false,tagName:'BUTTON'})},preventDefault(){}});
 const current=()=>JSON.parse(store.get('renjian-chronicles-v1')).slots[0].game;
+assert.ok(nodes.get('#app').innerHTML.includes('开启新人生'));
+assert.equal(store.size,0);
+click('new-life');click('choose-new-slot','0');click('guide-skip');
 assert.ok(nodes.get('#app').innerHTML.includes('这个月，想做些什么'));
 for(const id of ['people','growth','assets','family','life']){click('nav',id);assert.ok(!nodes.get('#app').innerHTML.includes('undefined'));assert.ok(nodes.get('#app').innerHTML.includes('<main'));}
 click('settings');assert.ok(nodes.get('#modal').open);assert.ok(nodes.get('#modal').innerHTML.includes('存档与设置'));click('close');
